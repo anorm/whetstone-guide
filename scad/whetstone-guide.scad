@@ -185,11 +185,12 @@ module guide(angle=20) {
         }
         
         // Rail skates
+        skate_d = rail_d - 2*rail_margin;
         tag("keep")
         xflip_copy(width/2)
         position(DOWN)
         orient(BACK)
-        cyl(h=guide_length, d=rail_d-2*rail_margin);
+        cyl(h=guide_length, d=skate_d, chamfer=1, chamfang=72);
     }
 }
 
