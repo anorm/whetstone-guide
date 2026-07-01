@@ -12,7 +12,10 @@ stone_height =  30; // [10:1:100]
 stone_length = 190; // [100:1:300]
 // Guide length (in mm)
 guide_length =  50; // [30:1:100]
-
+// Guide lift (spacing between stone and guide, in mm)
+guide_lift   =   1; // [0:0.1:5]
+// Guide thickness (in mm)
+guide_thick  =   3; // [0:0.1:6]
 // Guide angle 1 (in degrees)
 guide_angle_1         = 15; // [5:0.1:45]
 // Enable guide angle 2
@@ -135,8 +138,6 @@ module construction_frame(size, anchor=CENTER, spin=0, orient=UP, debug=0) {
         children();
     }
 }
-guide_lift = 2;
-guide_thick = 3;
 
 module guide(angle=20) {
     width = stone_width + rail_width;
