@@ -9,17 +9,19 @@ different sharpening angles.
 
 The main parameters to adjust are:
 
-- `stone_width` - Width (in mm) of the whetstone
-- `stone_height` - Height (in mm) of the whetstone
-- `stone_length` - Length (in mm) of the whetstone
-- `guide_length` - Length (in mm) of the guide
-- `guide_angle_1` - Angle (in °) of the first guide
-- `guide_angle_2_enabled` - Whether to create a second guide 
-- `guide_angle_2` - Angle (in °) of the second guide
-- `guide_angle_3_enabled` - Whether to create a third guide 
-- `guide_angle_3` - Angle (in °) of the third guide
-- `guide_angle_4_enabled` - Whether to create a fourth guide 
-- `guide_angle_4` - Angle (in °) of the fourth guide
+| Parameter name | Description |
+| -------------- | ----------- |
+| `stone_width` | Width (in mm) of the whetstone |
+| `stone_height` | Height (in mm) of the whetstone |
+| `stone_length` | Length (in mm) of the whetstone |
+| `guide_length` | Length (in mm) of the guide |
+| `guide_angle_1` | Angle (in °) of the first guide |
+| `guide_angle_2_enabled` | Whether to create a second guide |
+| `guide_angle_2` | Angle (in °) of the second guide |
+| `guide_angle_3_enabled` | Whether to create a third guide |
+| `guide_angle_3` | Angle (in °) of the third guide |
+| `guide_angle_4_enabled` | Whether to create a fourth guide |
+| `guide_angle_4` | Angle (in °) of the fourth guide |
 
 ## How-to
 
