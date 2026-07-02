@@ -46,6 +46,7 @@ base_edge_length =  8;
 base_rounding    =  7;
 rail_width       = 20;
 rail_d           = 15;
+rail_drain_width =  2;
 // Rail margin (clearing between the rail bed and the rail skates)
 rail_margin      =  0.1; // [0:0.1:2]
 
@@ -101,14 +102,27 @@ module base() {
                 base_height+base_edge_height],
             anchor=LEFT+BOT,
             rounding=base_rounding,
-            edges=[RIGHT+FWD, RIGHT+BACK])
+            edges=[RIGHT+FWD, RIGHT+BACK]) {
 
-        // Rail groove
-        tag("remove")
-        position(TOP)
-        up(rail_d*0.1) // Lift it 10% to open the bed angle
-        orient(FWD)
-        cyl(h=stone_length, d=rail_d);
+            // Rail groove
+            tag("remove")
+            position(TOP)
+            up(rail_d*0.1) // Lift it 10% to open the bed angle
+            orient(FWD)
+            cyl(h=stone_length, d=rail_d);
+            
+            // Rail drain
+            alpha = asin(2*rail_drain_width/rail_d);
+            lift = rail_d/2 * (1 - cos(alpha));
+            tag("remove")
+            position(TOP)
+            down(rail_d*0.4-lift)
+            cuboid(
+                size=[rail_drain_width, stone_length, base_height+base_edge_height+1],
+                rounding=-rail_drain_width/2,
+                edges=[TOP+LEFT, TOP+RIGHT],
+                anchor=TOP);
+        }
     }
 }
 
