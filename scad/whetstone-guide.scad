@@ -159,6 +159,7 @@ module guide(angle=20) {
     width = stone_width + rail_width;
     height = stone_height - base_edge_height - rail_d*0.1;
 
+    render(convexity=1)
     diff()
     construction_frame(
         size=[width, guide_length, height],
@@ -175,14 +176,21 @@ module guide(angle=20) {
                 height+guide_lift+guide_thick+guide_length*sqrt(2)],
             anchor=BOT) {
             
-            // Inner cutout
+            // Inner flat cutout
+            inner_flat_lift = guide_thick/cos(angle)-2*layer_height;
             tag("remove")
             position(BACK+BOT)
             up(height+guide_lift)
+            cuboid([width-guide_thick, 200, 100], anchor=TOP);
+
+            // Inner angle cutout
+            tag("remove")
+            position(BACK+BOT)
+            up(height+guide_lift-inner_flat_lift)
             xrot(-angle)
             cuboid([width-guide_thick, 200, 100], anchor=TOP)
 
-            // Outer cutout
+            // Outer angle cutout
             tag("remove")
             position(TOP)
             up(guide_thick)
