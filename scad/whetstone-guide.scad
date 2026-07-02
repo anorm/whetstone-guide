@@ -5,19 +5,19 @@ $fn=90;
 
 /* [Basic] */
 // Whetstone width (in mm)
-stone_width  =  60; // [10:1:150]
+stone_width  =  61; // [10:1:150]
 // Whetstone height (in mm)
-stone_height =  30; // [10:1:100]
+stone_height =  28; // [10:1:100]
 // Whetstone length (in mm)
-stone_length = 190; // [100:1:300]
+stone_length = 180; // [100:1:300]
 // Guide length (in mm)
-guide_length =  50; // [30:1:100]
+guide_length =  60; // [30:1:100]
 // Guide lift (spacing between stone and guide, in mm)
 guide_lift   =   1; // [0:0.1:5]
 // Guide thickness (in mm)
 guide_thick  =   3; // [0:0.1:6]
 // Guide angle 1 (in degrees)
-guide_angle_1         = 15; // [5:0.1:45]
+guide_angle_1         = 20; // [5:0.1:45]
 // Enable guide angle 2
 guide_angle_2_enabled = false;
 // Guide angle 2 (in degrees)
@@ -25,7 +25,7 @@ guide_angle_2         = 17.5; // [5:0.1:45]
 // Enable guide angle 3
 guide_angle_3_enabled = false;
 // Guide angle 3 (in degrees)
-guide_angle_3         = 20; // [5:0.1:45]
+guide_angle_3         = 15; // [5:0.1:45]
 // Enable guide angle 4
 guide_angle_4_enabled = false;
 // Guide angle 4 (in degrees)
@@ -50,7 +50,7 @@ rail_drain_width =  2;
 // 3D print layer height (in mm)
 layer_height     =  0.2;
 // Rail margin (clearing between the rail bed and the rail skates)
-rail_margin      =  0.1; // [0:0.1:2]
+rail_margin      =  0.2; // [0:0.1:2]
 
 /* [Preview settings] */
 preview_stone = true;
