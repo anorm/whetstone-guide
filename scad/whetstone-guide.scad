@@ -47,6 +47,8 @@ base_rounding    =  7;
 rail_width       = 20;
 rail_d           = 15;
 rail_drain_width =  2;
+// 3D print layer height (in mm)
+layer_height     =  0.2;
 // Rail margin (clearing between the rail bed and the rail skates)
 rail_margin      =  0.1; // [0:0.1:2]
 
@@ -204,7 +206,7 @@ module guide(angle=20) {
         xflip_copy(width/2)
         position(DOWN)
         orient(BACK)
-        cyl(h=guide_length, d=skate_d, chamfer=1, chamfang=72);
+        cyl(h=guide_length, d=skate_d, chamfer=2*layer_height, chamfang=72);
     }
 }
 
