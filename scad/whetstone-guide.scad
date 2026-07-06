@@ -51,6 +51,8 @@ rail_drain_width =  2;
 layer_height     =  0.2;
 // Rail margin (clearing between the rail bed and the rail skates)
 rail_margin      =  0.2; // [0:0.1:2]
+// Approximate drain length (in mm)
+approx_drain_length = 20;
 
 /* [Preview settings] */
 preview_stone = true;
@@ -116,11 +118,16 @@ module base() {
             // Rail drain
             alpha = asin(2*rail_drain_width/rail_d);
             lift = rail_d/2 * (1 - cos(alpha));
+            n = round(
+                (stone_length + guide_thick) /
+                (approx_drain_length + guide_thick));
+            drain_length = (stone_length + guide_thick) / n - guide_thick;
             tag("remove")
             position(TOP)
             down(rail_d*0.4-lift)
+            ycopies(n=n, spacing=drain_length + guide_thick)
             cuboid(
-                size=[rail_drain_width, stone_length, base_height+base_edge_height+1],
+                size=[rail_drain_width, drain_length, base_height+base_edge_height+1],
                 rounding=-rail_drain_width/2,
                 edges=[TOP+LEFT, TOP+RIGHT],
                 anchor=TOP);
